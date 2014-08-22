@@ -28,7 +28,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.source_files = 'Pod/Classes/**/*.*'
 
-  s.dependency 'YapDatabase/common'
-  s.dependency 'sqlite3/fts'
+  s.dependency 'YapDatabase'
   s.dependency 'JRSwizzle'
 end

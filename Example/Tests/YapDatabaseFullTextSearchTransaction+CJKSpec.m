@@ -49,7 +49,7 @@ describe(@"YapDatabaseFullTextSearchTransaction+CJK", ^{
     __block YapDatabase* database;
     __block YapDatabaseConnection* connection;
 
-    context(@"without mozporter tokenizer", ^{
+    context(@"YapDatabaseFullTextSearch", ^{
         beforeEach(^{
             NSString *databasePath = DatabasePath(@"no-mozporter");
             [[NSFileManager defaultManager] removeItemAtPath:databasePath error:NULL];
@@ -58,7 +58,7 @@ describe(@"YapDatabaseFullTextSearchTransaction+CJK", ^{
             InsertData(connection);
         });
         
-        it(@"should not search chinese message", ^{
+        it(@"should NOT search chinese message", ^{
             [connection readWithBlock:^(YapDatabaseReadTransaction *transaction) {
                 __block NSUInteger count;
                 // Find matches for: hello
@@ -79,7 +79,7 @@ describe(@"YapDatabaseFullTextSearchTransaction+CJK", ^{
         });
     });
 
-    context(@"with mozporter tokenizer", ^{
+    context(@"YapDatabaseCJKFullTextSearch", ^{
         beforeEach(^{
             NSString *databasePath = DatabasePath(@"mozporter");
             [[NSFileManager defaultManager] removeItemAtPath:databasePath error:NULL];
