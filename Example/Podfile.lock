@@ -1,0 +1,36 @@
+PODS:
+  - CocoaLumberjack (1.6.5.1):
+    - CocoaLumberjack/Core
+    - CocoaLumberjack/Extensions
+  - CocoaLumberjack/Core (1.6.5.1)
+  - CocoaLumberjack/Extensions (1.6.5.1):
+    - CocoaLumberjack/Core
+  - JRSwizzle (1.0)
+  - Kiwi (2.3.0)
+  - sqlite3/common (3.8.6)
+  - sqlite3/fts (3.8.6):
+    - sqlite3/common
+  - YapDatabase/common (2.4.3):
+    - CocoaLumberjack (~> 1.6.3)
+  - YapDatabaseCJKFullTextSearch (0.1.0):
+    - JRSwizzle
+    - sqlite3/fts
+    - YapDatabase/common
+
+DEPENDENCIES:
+  - Kiwi
+  - YapDatabaseCJKFullTextSearch (from `../`)
+
+EXTERNAL SOURCES:
+  YapDatabaseCJKFullTextSearch:
+    :path: ../
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: baf4a09a3bcbdfea3363556a90104e026d3504e2
+  JRSwizzle: 30da7a2c539a4ebf954b16d15f6dd8221c9f6fa5
+  Kiwi: 54bece5b35564d9b8e03c608d926f1a22fcfc589
+  sqlite3: 170bf094e597765aaa5d3d312a7b222a6f8ab6f0
+  YapDatabase: 2ec54726596299c88e09e899e8f17c15d7f6b18a
+  YapDatabaseCJKFullTextSearch: 805ab27726c63d59588fd3bfa10a713e507d1c9a
+
+COCOAPODS: 0.33.1
