@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "YapDatabaseCJKFullTextSearch"
-  s.version          = "0.1.0"
+  s.version          = "0.1.1"
   s.summary          = "A YapDatabase extension that allow full text search for CJK content."
   s.description      = <<-DESC
                        Use SQLite porter stemmer from Mozilla Thunderbird, this extension extend
