@@ -10,24 +10,21 @@
 Pod::Spec.new do |s|
   s.name             = "YapDatabaseCJKFullTextSearch"
   s.version          = "0.1.0"
-  s.summary          = "A short description of YapDatabaseCJKFullTextSearch."
+  s.summary          = "A YapDatabase extension that allow full text search for CJK content."
   s.description      = <<-DESC
-                       An optional longer description of YapDatabaseCJKFullTextSearch
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                       Use SQLite porter stemmer from Mozilla Thunderbird, this extension extend
+                       YapDatabaseFullTextSearch to allow indexing and searching for CJK content.
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/YapDatabaseCJKFullTextSearch"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "https://github.com/siuying/YapDatabaseCJKFullTextSearch"
   s.license          = 'MIT'
   s.author           = { "Francis Chong" => "francis@ignition.hk" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/YapDatabaseCJKFullTextSearch.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/siuying/YapDatabaseCJKFullTextSearch.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/siuying'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
   s.source_files = 'Pod/Classes/**/*.*'
 
-  s.dependency 'YapDatabase'
+  s.dependency 'YapDatabase', '>= 2.4'
   s.dependency 'JRSwizzle'
 end
