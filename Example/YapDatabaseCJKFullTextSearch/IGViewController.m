@@ -24,8 +24,6 @@
     [[NSFileManager defaultManager] removeItemAtPath:databasePath error:NULL];
     
     self.database = [[YapDatabase alloc] initWithPath:databasePath];
-    
-    [YapDatabaseCJKFullTextSearch configure];
 
     YapDatabaseFullTextSearchBlockType blockType = YapDatabaseFullTextSearchBlockTypeWithObject;
     YapDatabaseFullTextSearchWithObjectBlock block = ^(NSMutableDictionary *dict, NSString *collection, NSString *key, id object){

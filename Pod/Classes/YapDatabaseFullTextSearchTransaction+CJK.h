@@ -8,7 +8,7 @@
 
 #import "YapDatabaseFullTextSearchTransaction.h"
 
-@interface YapDatabaseCJKFullTextSearchTransaction: YapDatabaseFullTextSearchTransaction
+@interface YapDatabaseFullTextSearchTransaction (CJK)
 
 -(BOOL) cjk_createTable;
 -(BOOL) cjk_prepareIfNeeded;

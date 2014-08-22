@@ -7,9 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YapDatabaseFullTextSearch.h"
 
-@interface YapDatabaseCJKFullTextSearch : NSObject
+@interface YapDatabaseCJKFullTextSearch : YapDatabaseFullTextSearch
 
-+(void) configure;
+- (id)initWithColumnNames:(NSArray *)columnNames
+                  options:(NSDictionary *)options
+                    block:(YapDatabaseFullTextSearchBlock)block
+                blockType:(YapDatabaseFullTextSearchBlockType)blockType
+                  version:(int)version;
 
 @end

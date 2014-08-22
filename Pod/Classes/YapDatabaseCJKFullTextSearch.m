@@ -10,7 +10,6 @@
 #import "YapDatabaseFullTextSearchTransaction+CJK.h"
 #import "JRSwizzle.h"
 
-
 @interface YapDatabaseFullTextSearchTransaction(Private)
 - (BOOL)createTable;
 - (BOOL)prepareIfNeeded;
@@ -18,7 +17,7 @@
 
 @implementation YapDatabaseCJKFullTextSearch
 
-+(void) configure
++(void) initialize
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -28,4 +27,20 @@
                                                     withMethod:@selector(cjk_prepareIfNeeded) error:nil];
     });
 }
+
+- (id)initWithColumnNames:(NSArray *)columnNames
+                  options:(NSDictionary *)options
+                    block:(YapDatabaseFullTextSearchBlock)block
+                blockType:(YapDatabaseFullTextSearchBlockType)blockType
+                  version:(int)version
+{
+    NSMutableDictionary* newOptions = [options mutableCopy];
+    [newOptions setObject:@"mozporter" forKey:@"tokenize"];
+    return [super initWithColumnNames:columnNames
+                              options:newOptions
+                                block:block
+                            blockType:blockType
+                              version:version];
+}
+
 @end
