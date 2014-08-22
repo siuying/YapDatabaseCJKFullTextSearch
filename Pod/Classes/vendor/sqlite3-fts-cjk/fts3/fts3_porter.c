@@ -527,7 +527,7 @@ static void copy_stemmer(const unsigned char *zIn, const int nBytesIn,
     zOut = zFrontEnd + backBytes;
   }
   *zOut = 0;
-  *pnBytesOut = zOut - zOutStart;
+    *pnBytesOut = (int) zOut - (int) zOutStart;
 }
 
 
@@ -771,7 +771,7 @@ static void porter_stemmer(
   /* z[] is now the stemmed word in reverse order.  Flip it back
   ** around into forward order and return.
   */
-  *pnOut = i = strlen(z);
+  *pnOut = i = (unsigned int) strlen(z);
   zOut[i] = 0;
   while( *z ){
     zOut[--i] = *(z++);
@@ -852,7 +852,7 @@ static int isDelim(
   /* get the unicode character to analyze */
   READ_UTF8(zIn, zTerm, c);
   c = normalize_character(c);
-  *len = zIn - zCur;
+  *len = (int) zIn - (int) zCur;
 
   /* ASCII character range has rule */
   if( c < 0x80 ){
@@ -1115,7 +1115,7 @@ static int porterNext(
       } else {
         porter_stemmer(&z[iStartOffset], n, c->zToken, pnBytes);
       }
-      *pzToken = c->zToken;
+      *pzToken = (const char*) c->zToken;
       *piStartOffset = iStartOffset;
       *piEndOffset = c->iOffset;
       *piPosition = c->iToken++;
