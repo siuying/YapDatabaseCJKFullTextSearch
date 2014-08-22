@@ -1,0 +1,9 @@
+target 'YapDatabaseCJKFullTextSearch', :exclusive => true do
+  pod "YapDatabaseCJKFullTextSearch", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "YapDatabaseCJKFullTextSearch", :path => "../"
+
+  pod 'Kiwi'
+end
