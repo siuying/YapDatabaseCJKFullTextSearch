@@ -13,9 +13,9 @@ PODS:
     - CocoaLumberjack (~> 1.6.3)
   - YapDatabase/standard (2.4.3):
     - YapDatabase/common
-  - YapDatabaseCJKFullTextSearch (0.1.0):
+  - YapDatabaseCJKFullTextSearch (0.1.1):
     - JRSwizzle
-    - YapDatabase
+    - YapDatabase (>= 2.4)
 
 DEPENDENCIES:
   - Kiwi
@@ -30,6 +30,6 @@ SPEC CHECKSUMS:
   JRSwizzle: 30da7a2c539a4ebf954b16d15f6dd8221c9f6fa5
   Kiwi: 54bece5b35564d9b8e03c608d926f1a22fcfc589
   YapDatabase: 2ec54726596299c88e09e899e8f17c15d7f6b18a
-  YapDatabaseCJKFullTextSearch: 9b5847c5e8fe0c2e8e2c3bd04c0175740c454add
+  YapDatabaseCJKFullTextSearch: 3a275684851f5567bdc993374d2418b74fae48df
 
 COCOAPODS: 0.33.1
