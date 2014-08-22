@@ -3,7 +3,7 @@
 language: objective-c
 before_install:
 - gem install cocoapods -v 0.33.1
-- pod install
+- cd Example && pod install && cd ..
 - brew update
 - brew unlink xctool && brew install xctool --HEAD
 script:
